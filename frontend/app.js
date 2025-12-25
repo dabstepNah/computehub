@@ -1,31 +1,37 @@
-const jobs = [];
+const API_URL = "http://127.0.0.1:8000";
 
 const form = document.getElementById("job-form");
 const list = document.getElementById("jobs-list");
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const name = document.getElementById("job-name").value;
-    const type = document.getElementById("job-type").value;
+    const job_type = document.getElementById("job-type").value;
 
-    const job = {
-        id: Date.now(),
-        name,
-        type,
-        status: "PENDING"
-    };
+    await fetch(`${API_URL}/jobs`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ name, job_type })
+    });
 
-    jobs.push(job);
-    renderJobs();
     form.reset();
+    loadJobs();
 });
 
-function renderJobs() {
+async function loadJobs() {
+    const response = await fetch(`${API_URL}/jobs`);
+    const jobs = await response.json();
+
     list.innerHTML = "";
     jobs.forEach(job => {
         const li = document.createElement("li");
-        li.textContent = `${job.name} [${job.type}] — ${job.status}`;
+        li.textContent = `${job.name} [${job.job_type}] — ${job.status}`;
         list.appendChild(li);
     });
 }
+
+loadJobs();
+
