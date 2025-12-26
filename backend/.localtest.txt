@@ -1,3 +1,11 @@
 pip install -r requirements.txt
 uvicorn app.main:app --reload
 http://127.0.0.1:8000/docs
+
+ #docker build/test
+docker build -t computehub-backend .
+docker images
+
+ #запуск контейнера
+docker run -p 8000:8000 computehub-backend
+curl http://127.0.0.1:8000/jobs

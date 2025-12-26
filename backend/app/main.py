@@ -29,3 +29,4 @@ def create_job(job: JobCreate):
 @app.get("/jobs", response_model=List[Job])
 def list_jobs():
     return storage.list_jobs()
+

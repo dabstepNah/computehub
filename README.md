@@ -4,7 +4,7 @@
       Платформа планирования задач для пакетной и оперативной обработки данных.
 
 # Архитектура проекта
-      Frontend (UI) -->(HTTP)--> Backend (API, Scheduler) --> PostgreSQL (jobs, status) -->  Workers (Jobs / Pods)
+      Frontend (UI) -->(HTTP)--> Backend (API, Scheduler) -->  Workers (Jobs / Pods)
 
 # Используемые технологии (стек):
      #Frontend:
@@ -16,10 +16,6 @@
        -REST
        -JSON
        -HTTP методы
-     #DB:
-       -PostgreSQL
-       -SQL
-       -ORM (SQLAlchemy)
      #Docker:
        -Dockerfile
        -docker build / run
