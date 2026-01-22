@@ -20,33 +20,6 @@
        -Dockerfile
        -docker build / run
        -образы, контейнеры
-     #Docker Compose:
-       -docker-compose.yml
-       -networks
-       -env vars
-     #Nginx (Reverse Proxy):
-       -Nginx
-       -proxy_pass
-       -static files
-       -routing
-     #CI/CD:
-       -GitHub Actions
-       -pipelines
-     #Ansible:
-       -inventory
-       -playbooks
-       -roles
-       -idempotency
-     #Kubernetes:
-       -Pods
-       -Deployments
-       -Services
-       -ConfigMaps
-       -Secrets
-     #Ingress + Nginx Controller:
-       -Ingress
-       -ingress-nginx
-       -host routing
 
 # Roadmap?
       ?
